@@ -412,7 +412,7 @@ var gsTabSuspendManager = (function() {
 
   function generateUrlWithYouTubeTimestamp(tab) {
     return new Promise(resolve => {
-      if (tab.url.indexOf('https://www.youtube.com/watch') < 0) {
+      if (!tab.url.startsWith('https://www.youtube.com/watch')) {
         resolve(tab.url);
         return;
       }
